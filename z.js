@@ -4,8 +4,11 @@ var urlLogoLight = cdn + '/z-logo-light.svg'
 
 function setLogo(useDarkLogo) {
   var url = useDarkLogo ? urlLogoDark : urlLogoLight
-  document.querySelector('.gb_Sb').style.backgroundImage = 'url("' + url + '")'
-  document.querySelector('.gb_Sb').style.marginTop='17px'
+
+  var el = document.querySelector('a[title=Mail]').firstChild
+
+  el.style.backgroundImage = 'url("' + url + '")'
+  el.style.marginTop='17px'
 }
 
 chrome.storage.sync.get(null, function (s) {
